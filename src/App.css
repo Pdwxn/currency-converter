@@ -13,7 +13,7 @@
   background-color: rgb(59, 143, 135);
   border-radius: 22px;
   width: 80%;
-  height: 100%;
+  height: auto; /* Cambiado a auto para ajustar el alto dinámicamente */
 }
 
 .header {
@@ -37,30 +37,85 @@
 
 .converter {
   display: flex;
+  flex-direction: column;
   position: relative;
   margin: 0.8rem 3rem 3rem;
 }
 
-.converter input {
-  display: flex;
+.converter input, .converter select {
   border: none;
-  padding: 1rem;
   font-size: 1rem;
+  padding: 0.8rem;
   border-radius: 0.5rem;
-  margin-right: 2rem;
-}
-
-.converter select {
-  display: flex;
-  border: none;
-  font-size: 1rem;
-  padding: 0.2rem 1rem;
-  border-radius: 0.4rem;
-  margin-right: 2rem;
+  margin-bottom: 1rem;
 }
 
 .container p {
   font-size: 2rem;
   font-weight: 700;
   color: #f8f8f8;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 4rem 2rem; 
+    padding: 4rem 2rem; 
+  }
+
+  .header {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .header img {
+    max-width: 2rem;
+  }
+
+  .converter {
+    margin: 1rem 0;
+  }
+
+  .converter input, .converter select {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .container p {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (max-width: 412px) {
+  .container {
+    margin: 2rem 1rem; 
+    padding: 2rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header img {
+    max-width: 1.5rem;
+  }
+
+  .converter {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  .converter input, .converter select {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .container p {
+    font-size: 1.2rem;
+  }
 }
